@@ -1,0 +1,8 @@
+(define (deep-map fn lst)
+  (cond ((not (list? lst)) (fn lst))
+        ((null? lst) '())
+        (else (cons (deep-map fn (car lst))
+                    (deep-map fn (cdr lst)))
+        )
+  )
+)
